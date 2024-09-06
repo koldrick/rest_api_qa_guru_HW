@@ -1,19 +1,12 @@
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class ListUsersTests {
-    @BeforeAll
-    public static void setUp() {
-        RestAssured.baseURI = "https://reqres.in";
-        RestAssured.basePath = "/api";
-    }
-
+public class ListUsersTests extends TestBase {
 
     @Test
-    void checkDataSize() {
+    void checkDataSizeTest () {
         given().
                 when().
                 get("/users?page=2").
@@ -24,7 +17,7 @@ public class ListUsersTests {
     }
 
     @Test
-    void checkPageNumber() {
+    void checkPageNumberTest () {
         given().
                 when().
                 get("/users?page=2").
@@ -35,7 +28,7 @@ public class ListUsersTests {
     }
 
     @Test
-    void checkPerPage() {
+    void checkPerPageTest () {
         given().
                 when().
                 get("/users?page=2").
@@ -46,7 +39,7 @@ public class ListUsersTests {
     }
 
     @Test
-    void checkSupportText() {
+    void checkSupportTextTest () {
         given().
                 when().
                 get("/users?page=2").
@@ -57,7 +50,7 @@ public class ListUsersTests {
     }
 
     @Test
-    void checkFirstUserEmail() {
+    void checkFirstUserEmailTest () {
         given().
                 when().
                 get("/users?page=2").
