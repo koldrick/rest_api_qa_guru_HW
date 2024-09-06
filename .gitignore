@@ -1,0 +1,11 @@
+.gradle
+build/
+!**/src/main/**
+!**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+
+### Logs ###
+*.log
+
